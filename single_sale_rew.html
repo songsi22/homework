@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: auto;
+        }
+
+        .wrap > img {
+            width: 500px;
+            height: 300px;
+            padding: 10px;
+        }
+
+        .title {
+            font-size: 30px;
+        }
+
+        .money {
+            font-size: 15px;
+        }
+
+    </style>
+
+</head>
+<script>
+    function do_order() {
+        // if (document.getElementById("input_name").value == "")
+       if ($('#input_name').val() == "")
+            alert("이름을 입력하세요")
+        else if ($('#input_addr').val() == "")
+            alert("주소를 입력하세요")
+        else if ($('#input_phone').val() == "")
+            alert("전화번호를 입력하세요")
+        else if (isNaN($('#select_ea').val()))
+            alert("수량을 입력하세요")
+        else
+            alert("쭈문 완료")
+    }
+</script>
+<body>
+<div class="wrap">
+    <img src="https://blog.jinbo.net/attach/615/200937431.jpg" alt="purchase">
+    <span class="title">팜다</span>
+    <span class="money">가격: 300,000원 / 개</span>
+    <p>비추</p>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="span_name">이름</span>
+        </div>
+        <input type="text" id="input_name" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="select_ea">수량</label>
+        </div>
+        <select class="custom-select" id="select_ea">
+            <option selected>---수량을 선택해주셍</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="span_addr">주소</span>
+        </div>
+        <input type="text" id=input_addr class="form-control" aria-label="address" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">전화번호</span>
+        </div>
+        <input type="text" id=input_phone class="form-control" aria-label="phone" aria-describedby="basic-addon1">
+    </div>
+    <div style="text-align: center;">
+        <button onclick=do_order() class="btn btn-outline-secondary">주문하기</button>
+    </div>
+</div>
+
+</body>
+</html>
